@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Quarto CRC Book - 1&nbsp; ———————– TUGAS PROYEK SAINS DATA ————————</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./winequality.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">**----------------------- TUGAS PROYEK SAINS DATA ------------------------**</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Quarto CRC Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./winequality.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>———————– TUGAS PROYEK SAINS DATA ————————</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#bussiness-understanding" id="toc-bussiness-understanding" class="nav-link active" data-scroll-target="#bussiness-understanding"><span class="header-section-number">1.1</span> BUSSINESS UNDERSTANDING</a>
+  <ul class="collapse">
+  <li><a href="#tujuan-bisnis" id="toc-tujuan-bisnis" class="nav-link" data-scroll-target="#tujuan-bisnis"><span class="header-section-number">1.1.1</span> TUJUAN BISNIS</a></li>
+  <li><a href="#tujuan-penambangan-data" id="toc-tujuan-penambangan-data" class="nav-link" data-scroll-target="#tujuan-penambangan-data"><span class="header-section-number">1.1.2</span> TUJUAN PENAMBANGAN DATA</a></li>
+  <li><a href="#deskripsi-fitur" id="toc-deskripsi-fitur" class="nav-link" data-scroll-target="#deskripsi-fitur"><span class="header-section-number">1.1.3</span> DESKRIPSI FITUR</a></li>
+  <li><a href="#rencana-proyek" id="toc-rencana-proyek" class="nav-link" data-scroll-target="#rencana-proyek"><span class="header-section-number">1.1.4</span> RENCANA PROYEK</a></li>
+  </ul></li>
+  <li><a href="#data-understanding" id="toc-data-understanding" class="nav-link" data-scroll-target="#data-understanding"><span class="header-section-number">1.2</span> DATA UNDERSTANDING</a>
+  <ul class="collapse">
+  <li><a href="#teknik-pengumpulan-data" id="toc-teknik-pengumpulan-data" class="nav-link" data-scroll-target="#teknik-pengumpulan-data"><span class="header-section-number">1.2.1</span> TEKNIK PENGUMPULAN DATA</a></li>
+  <li><a href="#jumlah-dataset" id="toc-jumlah-dataset" class="nav-link" data-scroll-target="#jumlah-dataset"><span class="header-section-number">1.2.2</span> JUMLAH DATASET</a></li>
+  <li><a href="#analisis-statistik" id="toc-analisis-statistik" class="nav-link" data-scroll-target="#analisis-statistik"><span class="header-section-number">1.2.3</span> ANALISIS STATISTIK</a></li>
+  <li><a href="#deskripsi-fitur-1" id="toc-deskripsi-fitur-1" class="nav-link" data-scroll-target="#deskripsi-fitur-1"><span class="header-section-number">1.2.4</span> DESKRIPSI FITUR</a></li>
+  <li><a href="#tipe-data" id="toc-tipe-data" class="nav-link" data-scroll-target="#tipe-data"><span class="header-section-number">1.2.5</span> TIPE DATA</a></li>
+  <li><a href="#identifikasi-duplikat-pada-data" id="toc-identifikasi-duplikat-pada-data" class="nav-link" data-scroll-target="#identifikasi-duplikat-pada-data"><span class="header-section-number">1.2.6</span> IDENTIFIKASI DUPLIKAT PADA DATA</a></li>
+  <li><a href="#identifikasi-missing-values" id="toc-identifikasi-missing-values" class="nav-link" data-scroll-target="#identifikasi-missing-values"><span class="header-section-number">1.2.7</span> IDENTIFIKASI MISSING VALUES</a></li>
+  <li><a href="#visualisasi-data" id="toc-visualisasi-data" class="nav-link" data-scroll-target="#visualisasi-data"><span class="header-section-number">1.2.8</span> VISUALISASI DATA</a></li>
+  <li><a href="#identifikasi-outlier-pda-data" id="toc-identifikasi-outlier-pda-data" class="nav-link" data-scroll-target="#identifikasi-outlier-pda-data"><span class="header-section-number">1.2.9</span> IDENTIFIKASI OUTLIER PDA DATA</a></li>
+  <li><a href="#identifikasi-proporsi-jumlah-masing-masing-kelas-dalam-data" id="toc-identifikasi-proporsi-jumlah-masing-masing-kelas-dalam-data" class="nav-link" data-scroll-target="#identifikasi-proporsi-jumlah-masing-masing-kelas-dalam-data"><span class="header-section-number">1.2.10</span> IDENTIFIKASI PROPORSI JUMLAH MASING-MASING KELAS DALAM DATA</a></li>
+  </ul></li>
+  <li><a href="#preprocessing-data" id="toc-preprocessing-data" class="nav-link" data-scroll-target="#preprocessing-data"><span class="header-section-number">1.3</span> PREPROCESSING DATA</a>
+  <ul class="collapse">
+  <li><a href="#penanganan-duplikat-data" id="toc-penanganan-duplikat-data" class="nav-link" data-scroll-target="#penanganan-duplikat-data"><span class="header-section-number">1.3.1</span> PENANGANAN DUPLIKAT DATA</a></li>
+  <li><a href="#penanganan-outlier-pada-data" id="toc-penanganan-outlier-pada-data" class="nav-link" data-scroll-target="#penanganan-outlier-pada-data"><span class="header-section-number">1.3.2</span> PENANGANAN OUTLIER PADA DATA</a></li>
+  <li><a href="#penanganan-proporsi-jumlah-masing-masing-kelas-pada-data" id="toc-penanganan-proporsi-jumlah-masing-masing-kelas-pada-data" class="nav-link" data-scroll-target="#penanganan-proporsi-jumlah-masing-masing-kelas-pada-data"><span class="header-section-number">1.3.3</span> PENANGANAN PROPORSI JUMLAH MASING-MASING KELAS PADA DATA</a></li>
+  <li><a href="#split-data" id="toc-split-data" class="nav-link" data-scroll-target="#split-data"><span class="header-section-number">1.3.4</span> SPLIT DATA</a></li>
+  <li><a href="#normalisasi-data" id="toc-normalisasi-data" class="nav-link" data-scroll-target="#normalisasi-data"><span class="header-section-number">1.3.5</span> NORMALISASI DATA</a></li>
+  <li><a href="#ranking-setiap-fitur-dalam-data" id="toc-ranking-setiap-fitur-dalam-data" class="nav-link" data-scroll-target="#ranking-setiap-fitur-dalam-data"><span class="header-section-number">1.3.6</span> RANKING SETIAP FITUR DALAM DATA</a></li>
+  </ul></li>
+  <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling"><span class="header-section-number">1.4</span> MODELING</a>
+  <ul class="collapse">
+  <li><a href="#random-forest" id="toc-random-forest" class="nav-link" data-scroll-target="#random-forest"><span class="header-section-number">1.4.1</span> RANDOM FOREST</a></li>
+  <li><a href="#gridsearchcv" id="toc-gridsearchcv" class="nav-link" data-scroll-target="#gridsearchcv"><span class="header-section-number">1.4.2</span> GridSearchCV</a></li>
+  <li><a href="#simpan-model-klasifikasi" id="toc-simpan-model-klasifikasi" class="nav-link" data-scroll-target="#simpan-model-klasifikasi"><span class="header-section-number">1.4.3</span> SIMPAN MODEL KLASIFIKASI</a></li>
+  </ul></li>
+  <li><a href="#evaluasi-model" id="toc-evaluasi-model" class="nav-link" data-scroll-target="#evaluasi-model"><span class="header-section-number">1.5</span> EVALUASI MODEL</a>
+  <ul class="collapse">
+  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix"><span class="header-section-number">1.5.1</span> CONFUSION MATRIX</a></li>
+  <li><a href="#grafik-roc-auc" id="toc-grafik-roc-auc" class="nav-link" data-scroll-target="#grafik-roc-auc"><span class="header-section-number">1.5.2</span> GRAFIK ROC-AUC</a></li>
+  </ul></li>
+  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment"><span class="header-section-number">1.6</span> DEPLOYMENT</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><strong>———————– TUGAS PROYEK SAINS DATA ————————</strong></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<hr>
+<ul>
+<li>Nama : Soni Indra Maulana</li>
+<li>NIM : 210411100136</li>
+<li>Kelas : B</li>
+</ul>
+<section id="bussiness-understanding" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="bussiness-understanding"><span class="header-section-number">1.1</span> BUSSINESS UNDERSTANDING</h2>
+<hr>
+<section id="tujuan-bisnis" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="tujuan-bisnis"><span class="header-section-number">1.1.1</span> TUJUAN BISNIS</h3>
+<p><strong>Meningkatkan nilai jual salah satu produk wine yaitu produk red wine Vinho Verde dengan meningkatkan kualitas produk red wine milik perusahaan Vinho Verde</strong></p>
+</section>
+<section id="tujuan-penambangan-data" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="tujuan-penambangan-data"><span class="header-section-number">1.1.2</span> TUJUAN PENAMBANGAN DATA</h3>
+<p><strong>Menilai kualitas pada anggur merah (red wine) yang diproduksi oleh perusahaan vinho verde dengan menggunakan model klasifikasi, kualitas anggur dapat dinyatakan dengan menentukan nilai regressi seperti berikut:</strong></p>
+<ul>
+<li>Kualitas Anggur lebih besar sama dengan 7 maka dinyatakan “good” atau bernilai 1</li>
+<li>Kualitas Anggur di bawah angka 7 maka dinyatakan “not good” atau bernilai 0</li>
+</ul>
+<p>Untuk menentukan kualitas dari anggur dapat dilihat dari ciri-ciri sebagai berikut:</p>
+</section>
+<section id="deskripsi-fitur" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="deskripsi-fitur"><span class="header-section-number">1.1.3</span> DESKRIPSI FITUR</h3>
+<ul>
+<li><strong>Fixed acidity (Kadar asam tartarat pada anggur) (g/dm3)</strong></li>
+<li><strong>Volatile acidity (Kadar asam asetat pada anggur)(g/dm3)</strong></li>
+<li><strong>Citric acid (Kadar asam sitrat dalam anggur) (g/dm3)</strong></li>
+<li><strong>Residual Sugar(Kadar sisa gula pada wine) (g/dm3)</strong></li>
+<li><strong>Chlorides (Kadar natrium klorida dalam anggur) (g/dm3)</strong></li>
+<li><strong>Free sulfur dioxide (Tingkat sulfur dioksida bebas dalam anggur) (mg/dm3)</strong></li>
+<li><strong>Total sulfur dioxide (SO2 Total = SO2 bebas + SO2 bereaksi) (mg/dm3)</strong></li>
+<li><strong>Density(Kepadatan anggur) (g/cm3)</strong></li>
+<li><strong>pH(tingkat keasaman anggur)(Range: 0 - 14)</strong></li>
+<li><strong>Sulphates(Kadar kalium sulfat dalam anggur)(g/dm3)</strong></li>
+<li><strong>Alcohol(Konsentrasi alkohol dalam anggur)(% vol.&nbsp;)</strong></li>
+</ul>
+</section>
+<section id="rencana-proyek" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="rencana-proyek"><span class="header-section-number">1.1.4</span> RENCANA PROYEK</h3>
+<p>Untuk mencapai Tujuan Penambangan Data serta Tujuan Bisnis diatas. Maka, terdapat serangkaian langkah-langkah yang perlu dilakukan diantaranya: - Mengumpulkan Sumber Daya : Sumber Daya yang akan diolah sebagai masukan adalah data penilaian serta kandungan dari salah satu produk anggur milik perusahaan vinho verde yaitu anggur merah . Data yang dimasukkan adalah data yang telah di berikan label berdasarkan penilaian dari anggur merah serta beberapa ciri didalam anggur yang mendukung pengelompokkan anggur berdasarkan label nya</p>
+<ul>
+<li><p>Mengelompokkan Sumber Daya : Sesui dengan tujuan penambangan data nya. Maka dari itu, diasumsikan terdapat dua jenis kategori dari kualitas anggur merah ini yaitu anggur merah dengan kualitas baik dan buruk sehingga banyak kelas dari sebelumnya berupa rentang angka dari 1 sampai 10 menjadi data tipe binary yang hanya memiliki dua jenis, yaitu 1 (baik) dan 0 (buruk)</p></li>
+<li><p>Analisis Sumber Daya : Analisis perlu dilakukan dikarenkan untuk mengetahui tahap-tahap pre-processing apa saja yang diperlukan untuk mengatasi berkurangnya kualitas data yang akan diolah, terdapat beberapa analisis yang perlu dilakukan seperti : analisis tipe data apa saja didalm data, analisis missing values pada data, analsis oulier pada data serta analsis proporsi jumlah kelas didalm data.</p></li>
+<li><p>Pre-processing Sumber Daya : sebelum memasuki tahap modeling, data terlebih dahulu harus dalam kualitas yang sangat baik dengan menangani permasalahan pada data yang telah diketahui dan dianalisis pada tahap analisis sumber daya. Dengan begitu, pada tahap ini telah diketahui apa saja langkah-langkah yang harus dilakukan untuk meningkatkan kualitas dari data, seperti penyeimbangan jumlah kelas dalam data, penanganan missing values dan outlier pada data. Selain penanganan terhadap kesalahan dalam data, pada tahap ini dilakukan juga split atau pembagian data menjadi 2 bagian yatu data latih(training) dan data uji(testing), pembagian perlu dilakukan untuk melatih model untuk menentukan model yang terbaik untuk data nantinya di tahap selanjutnya. Pada tahap ini dapat ditambahkan pemilihan fitur terbaik dengan me-ranking setiap fitur dalam data sehingga dapat diketahui fitur-fitur apa saja yang paling berpengaruh dan paling tidak berpengaruh pada penentuan kelas pada data.</p></li>
+<li><p>Skenario Percobaan : tahap ini digunakan untuk melakukan pencarian terhadap metode dan parameter nya yang cocok pada data. Dikatakan cocok dengan data jika akurasi yang didapatkan dari metode dan paramter tersebut dinilai besar dan lebih baik dari metode dan parameter nya yang lain. Untuk mengetahui nya maka perlu dilakukan percobaan untuk mengetahui metode dan parameter nya yang dapat menghasilkan nilai akurasi yang besar.</p></li>
+<li><p>Modelling : setalah data dalam keadaan berkualitas yang baik, maka untuk melakukan prediksi kualitas anggur merah sebelumnya perlu dilakukan pemilihan metode serta parameter terbaik nya. Pada tahap ini, metode serta parameter yang dinilai terbaik untuk data di terapkan pada data setelah itu ekstraksi model dilakukan dengan berisikan metode serta parameter terbaik nya yang disimpan dalam sebuah file, yang dimana nanti untuk melakukan prediksi pada data uji model ini lah yang akan di load dan diterapkan.</p></li>
+<li><p>Evaluasi Model : Pada tahap ini model terbaik yang telah diciptakan dilakukan evaluasi dengan melihat akurasi yang didapatkannya serta dapat dengan membuat tabel kebingungan serta grafik kurva ROC-AUC dari hasil modelling data dengan metode serta parameter terbaik nya. Disini, hasil modelling dapat dinilai dan evaluasi tingkat keakuratan nya</p></li>
+<li><p>Deployment : Disini prediski pada data uji dapat diterapkan dengan mengimpementasikan model terbaik yang telah di ekspor tadi kedalam data baru yang belum diketahui kelas nya apakah termasukka kedalm kelas kualitas baik atau buruk. Dimulai dengan input data yang akan diuji lalu model terbaik yang telah di load lalu diterapkan dalam data uji yang barusan diinputkan sehingga dapat melakukan prediksi kualitas anggur merah terhadap data uji yang baru tersebut.</p></li>
+</ul>
+</section>
+</section>
+<section id="data-understanding" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="data-understanding"><span class="header-section-number">1.2</span> DATA UNDERSTANDING</h2>
+<hr>
+<section id="teknik-pengumpulan-data" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="teknik-pengumpulan-data"><span class="header-section-number">1.2.1</span> TEKNIK PENGUMPULAN DATA</h3>
+<p>Data yang digunakan pada proyek ini adalah data dari salah satu produk unik berupa red wine yang diproduksi oleh perusahaan vinho verde dari wilayah Minho (barat laut) Portugal.Data dikumpulkan dari Mei 2004 hingga Februari 2007 hanya dengan menggunakan proteksi penunjukan sampel asal yang diuji di badan sertifikasi resmi (CVRVV).CVRVV adalah organisasi antar-profesional dengan tujuan meningkatkan kualitas dan pemasaran vinho verde. Datanya adalah dicatat oleh sistem komputerisasi (iLab), yang secara otomatis mengelola proses pengujian sampel anggur mulai dari permintaan produsen hingga analisis laboratorium dan sensorik. Setiap entri menunjukkan tes tertentu (analitis atau sensorik) dan database akhir diekspor ke dalam satu lembar (.csv). Tentang preferensi, setiap sampel dievaluasi oleh minimal tiga penilai sensorik (menggunakan pengecap buta),yang menilai anggur dalam skala yang berkisar dari 0 (sangat buruk) hingga 10 (sangat baik).</p>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Berikut Library apa saja yang perlu di import untuk membantu pemrosesan pada data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> LocalOutlierFactor</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.over_sampling <span class="im">import</span> RandomOverSampler</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix, classification_report, roc_auc_score,roc_curve</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix, classification_report</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> SelectKBest</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> mutual_info_classif</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Me-load file red-wine dengan ekstensi csv </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'winequality-red.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Untuk Mengetahui Keunikan Kelas Dalam Data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'quality'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="61">
+<pre><code>array([5, 6, 7, 4, 8, 3], dtype=int64)</code></pre>
+</div>
+</div>
+</section>
+<section id="jumlah-dataset" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="jumlah-dataset"><span class="header-section-number">1.2.2</span> JUMLAH DATASET</h3>
+<p>Jumlah Dataset sebanyak 1599 record. Dikarenakan pada data red wine pada kolom ‘quality’ berisikan rentang nilai dari 0 sampai 10. Maka, untuk menentukan kualitas baik atau buruk nya red wine dapat dengan memasukkan data dengan rentang 0 sampai 6 termasuk kedalam golongan kualitas anggur yang buruk (0) dan memasukkan data dengan rentang 7 sampai 10 kedalam golongan kualitas anggur yang baik (1)</p>
+<p>Berikut Hasil pembagian kelas didalm data : - Berkualitas buruk (0) = 1382 data - Berkualitas baik (1) = 217 data</p>
+<div class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># untuk membagi data menjadi fitur dan target</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fitur <span class="op">=</span> data.drop(<span class="st">'quality'</span>, axis<span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> data[<span class="st">'quality'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> y_value: <span class="dv">1</span> <span class="cf">if</span> y_value <span class="op">&gt;=</span> <span class="dv">7</span> <span class="cf">else</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#untuk menghitung berapa banyak kelas dan jumlah nya dalam sekumpulan data</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>target.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="63">
+<pre><code>quality
+0    1382
+1     217
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="analisis-statistik" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="analisis-statistik"><span class="header-section-number">1.2.3</span> ANALISIS STATISTIK</h3>
+<p>Analisis statistik pada data adalah proses mengumpulkan, menyusun, meringkas, menginterpretasi, dan membuat kesimpulan dari data menggunakan metode statistik. Tujuan utamanya adalah untuk memahami pola, tren, atau hubungan di dalam data yang telah dikumpulkan.</p>
+<p>Deskripsi Statistik: Ini mencakup teknik untuk merangkum dan menggambarkan data, seperti mean (rata-rata), median (nilai tengah), modus (nilai yang paling sering muncul), kuartil, dan deviasi standar.</p>
+<p>Deskripsi Statistik digunakan untuk memberikan nilai statistik deskriptif dari suatu dataframe dengan hasil sebagai berikut- :</p>
+<ul>
+<li>Count : jumlah data yang bernilai didalam kolom.</li>
+<li>Mean : Nilai rata-rata nilai setiap kolom</li>
+<li>std (standar deviasi) : Sebaran data, standar deviasi yang tinggi menunjukka bahwa data cenderung lebih tersebar.</li>
+<li>Min : menunjukkan nilai terkecil pada setiap kolom</li>
+<li>25% atau Q1 : Menunjukkan kuartil pertama, nilai yang membagi 25% data terandah.</li>
+<li>50% : Median atau Q2, nilai tengah dari data .</li>
+<li>75% atau Q3 :Nilai yang membagi 75% data terendah atau batas atas .<br>
+</li>
+<li>max : Nilai terbesar dalams etiap kolom.</li>
+</ul>
+<div class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="64">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">fixed acidity</th>
+<th data-quarto-table-cell-role="th">volatile acidity</th>
+<th data-quarto-table-cell-role="th">citric acid</th>
+<th data-quarto-table-cell-role="th">residual sugar</th>
+<th data-quarto-table-cell-role="th">chlorides</th>
+<th data-quarto-table-cell-role="th">free sulfur dioxide</th>
+<th data-quarto-table-cell-role="th">total sulfur dioxide</th>
+<th data-quarto-table-cell-role="th">density</th>
+<th data-quarto-table-cell-role="th">pH</th>
+<th data-quarto-table-cell-role="th">sulphates</th>
+<th data-quarto-table-cell-role="th">alcohol</th>
+<th data-quarto-table-cell-role="th">quality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+<td>1599.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>8.319637</td>
+<td>0.527821</td>
+<td>0.270976</td>
+<td>2.538806</td>
+<td>0.087467</td>
+<td>15.874922</td>
+<td>46.467792</td>
+<td>0.996747</td>
+<td>3.311113</td>
+<td>0.658149</td>
+<td>10.422983</td>
+<td>5.636023</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>1.741096</td>
+<td>0.179060</td>
+<td>0.194801</td>
+<td>1.409928</td>
+<td>0.047065</td>
+<td>10.460157</td>
+<td>32.895324</td>
+<td>0.001887</td>
+<td>0.154386</td>
+<td>0.169507</td>
+<td>1.065668</td>
+<td>0.807569</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>4.600000</td>
+<td>0.120000</td>
+<td>0.000000</td>
+<td>0.900000</td>
+<td>0.012000</td>
+<td>1.000000</td>
+<td>6.000000</td>
+<td>0.990070</td>
+<td>2.740000</td>
+<td>0.330000</td>
+<td>8.400000</td>
+<td>3.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>7.100000</td>
+<td>0.390000</td>
+<td>0.090000</td>
+<td>1.900000</td>
+<td>0.070000</td>
+<td>7.000000</td>
+<td>22.000000</td>
+<td>0.995600</td>
+<td>3.210000</td>
+<td>0.550000</td>
+<td>9.500000</td>
+<td>5.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>7.900000</td>
+<td>0.520000</td>
+<td>0.260000</td>
+<td>2.200000</td>
+<td>0.079000</td>
+<td>14.000000</td>
+<td>38.000000</td>
+<td>0.996750</td>
+<td>3.310000</td>
+<td>0.620000</td>
+<td>10.200000</td>
+<td>6.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>9.200000</td>
+<td>0.640000</td>
+<td>0.420000</td>
+<td>2.600000</td>
+<td>0.090000</td>
+<td>21.000000</td>
+<td>62.000000</td>
+<td>0.997835</td>
+<td>3.400000</td>
+<td>0.730000</td>
+<td>11.100000</td>
+<td>6.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>15.900000</td>
+<td>1.580000</td>
+<td>1.000000</td>
+<td>15.500000</td>
+<td>0.611000</td>
+<td>72.000000</td>
+<td>289.000000</td>
+<td>1.003690</td>
+<td>4.010000</td>
+<td>2.000000</td>
+<td>14.900000</td>
+<td>8.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="deskripsi-fitur-1" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="deskripsi-fitur-1"><span class="header-section-number">1.2.4</span> DESKRIPSI FITUR</h3>
+<hr>
+<ul>
+<li><p><strong>Fixed acidity (Kadar asam tartarat pada anggur) (g/dm3)</strong></p>
+<p>Asam tetap (Fixed acidity) yang dominan ditemukan dalam anggur mengacu pada total asam-asam yang terdapat dalam anggur yang tidak teruapkan selama fermentasi atau proses lainnya seperti tartarat, malat, sitrat, dan suksinat. Tingkat masing-masing yang ditemukan dalam anggur bisa sangat bervariasi tetapi dalam secara umum orang akan mengharapkan untuk melihat 1.000 hingga 4.000 mg/L asam tartarat, 0 hingga 8.000 mg/L asam malat, 0 hingga 500 mg/L asam sitrat, dan 500 hingga 2.000 mg/L asam suksinat. Secara umum, kadar fixed acidity yang ideal dalam anggur merah berkisar antara 5 hingga 6 gram per liter.</p></li>
+<li><p><strong>Volatile acidity (Kadar asam asetat pada anggur)(g/dm3)</strong></p>
+<p>Volatil acidity atau keasaman yang mudah menguap dalam anggur mengacu pada kandungan asam-asam yang bisa menguap pada suhu ruangan. Asam-asam ini, seperti asam asetat, terutama berkontribusi pada karakteristik rasa dan aroma anggur. Asam asetat adalah salah satu dari beberapa komponen yang memberikan rasa pada anggur. Kadar volatile acidity yang dianggap “terbaik” dalam anggur bervariasi tergantung pada jenis anggur, gaya pembuatan anggur, dan preferensi individu. Secara umum, kandungan VA yang diinginkan dalam anggur merah, batasnya cenderung sedikit lebih tinggi, mungkin sekitar 0,5 gram per liter.</p></li>
+<li><p><strong>Citric acid (Kadar asam sitrat dalam anggur)(g/dm3)</strong></p>
+<p>Asam Sitrat adalah asam yang memberikan kontribusi pada rasa asam yang lembut pada anggur. Asam sitrat memiliki banyak kegunaan dalam produksi anggur. Asam sitrat adalah bahan organik lemah asam, yang sering digunakan sebagai pengawet alami atau bahan tambahan pada makanan atau minuman untuk menambah rasa asam pada makanan. Kadar asam sitrat dalam anggur merah bisa bervariasi, namun secara umum, anggur merah cenderung memiliki kadar asam sitrat yang lebih rendah dibandingkan dengan jenis asam lainnya seperti asam tartarat. Kandungan asam sitrat dalam anggur merah biasanya berkisar antara 0,1 hingga 0,7 gram per liter.</p></li>
+<li><p><strong>Residual Sugar(Kadar sisa gula pada wine)(g/dm3)</strong></p>
+<p>Gula Residu berasal dari gula anggur alami yang tersisa dalam anggur setelahnya fermentasi alkohol selesai. Itu diukur dalam gram per liter. Sisa kadar gula bervariasi pada berbagai jenis anggur. Anggur kering memiliki kadar residual sugar yang rendah, biasanya kurang dari 10 gram per liter (g/L). Anggur kering memiliki sedikit rasa manis.</p></li>
+<li><p><strong>Chlorides (Kadar natrium klorida dalam anggur)(g/dm3)</strong></p>
+<p>Klorida adalah salah satu komponen kimia yang bisa ditemukan dalam anggur. Kadar klorida dalam anggur dapat berasal dari air irigasi, tanah tempat anggur tumbuh, atau dari pupuk yang digunakan selama pertumbuhan tanaman. Kandungan klorida ini bisa mempengaruhi karakteristik dan kualitas anggur. Maksimal konsentrasi klorida dalam anggur sekitar 0,20 - 0,60 g/L</p></li>
+<li><p><strong>Free sulfur dioxide (Tingkat sulfur dioksida bebas dalam anggur)(mg/dm3)</strong></p>
+<p>Sulfur dioksida (SO2) adalah keadaan dimana aat sulfur dioksida larut dalam anggur, sebagian dari sulfurnya bereaksi menjadi bentuk bebas. Kadar SO2 bebas yang dianggap ideal dalam anggur merah dapat bervariasi tergantung pada beberapa faktor, termasuk jenis anggur, kondisi penyimpanan, dan preferensi pembuat anggur.Secara umum, kadar SO2 bebas dalam anggur merah biasanya berada dalam kisaran 10 hingga 40 mg/L</p></li>
+<li><p><strong>Total sulfur dioxide (SO2 Total = SO2 bebas + SO2 bereaksi) (mg/dm3)</strong></p>
+<p>Total sulfur dioxide (SO2) adalah ukuran untuk jumlah keseluruhan sulfur dioksida yang ada dalam anggur. Sulfur dioksida digunakan secara umum sebagai bahan tambahan dalam produksi anggur untuk melindungi anggur dari oksidasi dan infeksi mikroba. Dapat dinyatakan berupa Bagian dari sulfur dioksida bebas ditambah bagian yang terikat dengan bahan kimia lain di dalamnya anggur seperti aldehida, pigmen, atau gula. Untuk anggur merah, biasanya kadar SO2 yang dianjurkan berkisar antara 30 hingga 50 mg/L (miligram per liter), tetapi angka ini dapat bervariasi berdasarkan regulasi lokal, jenis anggur, dan praktik pembuatan anggur yang digunakan oleh produsen.</p></li>
+<li><p><strong>Density(Kepadatan anggur) (g/cm3)</strong></p>
+<p>Density (kepadatan) dalam konteks anggur merujuk pada kepekatan relatif dari komponen-komponen dalam anggur, terutama gula dan alkohol yang terlarut dalam jus anggur, biasanya diukur dalam satuan Brix. Brix adalah unit yang digunakan untuk mengukur kadar padatan terlarut dalam cairan. Kadar Brix yang dianggap baik untuk anggur merah bisa berkisar antara 22 hingga 25 Brix.</p></li>
+<li><p><strong>pH(tingkat keasaman anggur)(Range: 0 - 14)</strong></p>
+<p>Tingkat keasaman dalam anggur merah adalah salah satu komponen penting yang mempengaruhi rasa dan karakteristik anggur. Keasaman dalam anggur biasanya diukur dengan pH, yang mengindikasikan tingkat keasaman relatif dalam cairan tersebut. Rentang pH yang umum untuk anggur merah adalah sekitar 3 hingga 4.</p></li>
+<li><p><strong>Sulphates(Kadar kalium sulfat dalam anggur)(g/dm3)</strong></p>
+<p>Sulfit, juga biasa disebut sulfur dioksida, adalah senyawa kimia yang mengandung ion sulfit.Sulfit adalah zat yang sering digunakan sebagai pengawet dan antioksidan dalam anggur. Ini digunakan untuk mencegah oksidasi anggur dan pertumbuhan mikroorganisme yang tidak diinginkan. Kadar sulfat yang direkomendasikan dalam anggur merah berkisar antara 10 hingga 70 miligram per liter (mg/L). Namun, peraturan tentang batas maksimum penggunaan sulfat dalam anggur dapat berbeda di berbagai negara.</p></li>
+<li><p><strong>Alcohol(Konsentrasi alkohol dalam anggur)(% vol.&nbsp;)</strong></p>
+<p>Alkohol dalam anggur adalah etanol yang dihasilkan melalui proses fermentasi gula dalam anggur oleh ragi atau mikroorganisme lainnya. Kadar alkohol dalam anggur dapat bervariasi tergantung pada beberapa faktor, seperti jenis anggur, kondisi iklim tempat tumbuhnya anggur, serta teknik pembuatan dan proses fermentasi yang digunakan. Kadar alkohol yang dianggap ideal dalam anggur merah biasanya berkisar antara 12% hingga 15%.</p></li>
+</ul>
+<div class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># untuk mengetahui fitur apa saja dalam data</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>data.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="65">
+<pre><code>Index(['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar',
+       'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density',
+       'pH', 'sulphates', 'alcohol', 'quality'],
+      dtype='object')</code></pre>
+</div>
+</div>
+</section>
+<section id="tipe-data" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="tipe-data"><span class="header-section-number">1.2.5</span> TIPE DATA</h3>
+<p>Tipe Data didalam data terdapat dua jenis yaitu Tipe data Rasio dan Tipe Data Numerik</p>
+<p><strong>TIPE DATA RASIO</strong></p>
+<p>adalah tipe data yang mengacu pada jenis data yang memiliki sifat kuantitatif dan memiliki nol absolut yang bermakna.Contoh tipe data rasio adalah variabel yang melibatkan pengukuran yang memiliki nol yang bermakna, seperti panjang, berat, suhu, dan waktu.Operasi aritmatika seperti penambahan, pengurangan, perkalian, dan pembagian dapat dilakukan pada tipe data rasio ini. Nilai-nilai pada tipe data rasio dapat dibandingkan dan digunakan untuk perbandingan rasio atau perbandingan persentase</p>
+<p><strong>TIPE DATA NUMERIK</strong></p>
+<p>adalah tipe data yang mencakup sejumlah besar nilai numerik, yang dapat berupa bilangan bulat (integer) atau bilangan pecahan (floating-point).Bilangan bulat adalah bilangan utuh tanpa bagian desimal seperti -3, 0, 7, dan sebagainya.Bilangan pecahan atau floating-point adalah bilangan dengan bagian desimal seperti 3.14, 0.5, -8.75, dan sejenisnya.Data numerik dapat digunakan untuk operasi matematika seperti penambahan, pengurangan, perkalian, pembagian, serta operasi lainnya.</p>
+<p><strong>Tipe data dari disetiap kolom pada data anggur merah vinho verde sebagai berikut</strong></p>
+<ol type="1">
+<li>Tipe Rasio :</li>
+</ol>
+<p>Tipe data Rasio adalah</p>
+<blockquote class="blockquote">
+<ul>
+<li>fixed acidity</li>
+<li>volatile acidity</li>
+<li>citric acid</li>
+<li>residual sugar</li>
+<li>chlorides</li>
+<li>free sulfur dioxide</li>
+<li>total sulfur dioxide</li>
+<li>density</li>
+<li>pH</li>
+<li>sulphates</li>
+<li>alcohol</li>
+</ul>
+</blockquote>
+<ol start="2" type="1">
+<li>Tipe Numerik</li>
+</ol>
+<p>Tipe data Nominal adalah</p>
+<blockquote class="blockquote">
+<ul>
+<li>quality</li>
+</ul>
+</blockquote>
+<div class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1599 entries, 0 to 1598
+Data columns (total 12 columns):
+ #   Column                Non-Null Count  Dtype  
+---  ------                --------------  -----  
+ 0   fixed acidity         1599 non-null   float64
+ 1   volatile acidity      1599 non-null   float64
+ 2   citric acid           1599 non-null   float64
+ 3   residual sugar        1599 non-null   float64
+ 4   chlorides             1599 non-null   float64
+ 5   free sulfur dioxide   1599 non-null   float64
+ 6   total sulfur dioxide  1599 non-null   float64
+ 7   density               1599 non-null   float64
+ 8   pH                    1599 non-null   float64
+ 9   sulphates             1599 non-null   float64
+ 10  alcohol               1599 non-null   float64
+ 11  quality               1599 non-null   int64  
+dtypes: float64(11), int64(1)
+memory usage: 150.0 KB</code></pre>
+</div>
+</div>
+</section>
+<section id="identifikasi-duplikat-pada-data" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="identifikasi-duplikat-pada-data"><span class="header-section-number">1.2.6</span> IDENTIFIKASI DUPLIKAT PADA DATA</h3>
+<hr>
+<p>Duplikat data adalah terdapat record atau baris yang identik atau sangat mirip dalam hal nilai-nilai di beberapa kolom. Ini bisa menjadi masalah karena dapat mengganggu analisis data dan mempengaruhi keakuratan hasil yang diperoleh dari query atau pemrosesan data.</p>
+<p>Hasil Identifikasi Duplikat Data : - Didalam data red wine setelah di identifikasi di temukan duplikat data dalam tabel red wine yaitu sebanyak : 240 data</p>
+<div class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>jumlah_duplikat <span class="op">=</span> data.duplicated().<span class="bu">sum</span>()</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah data duplikat:"</span>, jumlah_duplikat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jumlah data duplikat: 240</code></pre>
+</div>
+</div>
+</section>
+<section id="identifikasi-missing-values" class="level3" data-number="1.2.7">
+<h3 data-number="1.2.7" class="anchored" data-anchor-id="identifikasi-missing-values"><span class="header-section-number">1.2.7</span> IDENTIFIKASI MISSING VALUES</h3>
+<p>Missing Values sesuai dengan namanya yaitu keberadaan nilai yang kosong atau hilang pada data. Pada proses analsisis data hilangnya banyak data dapat menyebabkan akurasi yang dihasilkan semakin menurun.</p>
+<p>Hasil Identifikasi Missing Values :</p>
+<ul>
+<li>Di dalam data sampel anggur merah setelah dilakukan pengecekan nilai tidak ditemukan data dengan nilai yang hilang (Missing Values).</li>
+</ul>
+<div class="cell" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># untuk mengecek apakah terdapat missing values pada data</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>data.isnull().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="68">
+<pre><code>fixed acidity           0
+volatile acidity        0
+citric acid             0
+residual sugar          0
+chlorides               0
+free sulfur dioxide     0
+total sulfur dioxide    0
+density                 0
+pH                      0
+sulphates               0
+alcohol                 0
+quality                 0
+dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="visualisasi-data" class="level3" data-number="1.2.8">
+<h3 data-number="1.2.8" class="anchored" data-anchor-id="visualisasi-data"><span class="header-section-number">1.2.8</span> VISUALISASI DATA</h3>
+<div class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># menampilkan diagram batang setiap kolom dalam data</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>data.hist(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">14</span>))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="winequality_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="identifikasi-outlier-pda-data" class="level3" data-number="1.2.9">
+<h3 data-number="1.2.9" class="anchored" data-anchor-id="identifikasi-outlier-pda-data"><span class="header-section-number">1.2.9</span> IDENTIFIKASI OUTLIER PDA DATA</h3>
+<p>Outlier Pada Data adalah nilai yang berbeda dari yang lain dimana perbedaannya sangat jauh dengan sekumpulan data yang lain dalam satu kolom.Keberadaan Outlier sendiri dinilai dapat mengganggu analisis statistik dan kesimpulan yang diambil dari data karena mereka bisa menyebabkan pergeseran rata-rata atau mengganggu distribusi data secara keseluruhan. Maka dari itu, pada data red wine ini perlu dilakukan identifikasi outlier pada data. Untuk menentukan outluer pada data dapat dengan menggunakan metode Local Outlier Factor.</p>
+<p>Hasil Identifikasi Outlier pada Data :</p>
+<ul>
+<li>Setelah dilakukan pengecekan outlier dengan menggunakan teknik Local Outlier Factor diketahui terdapat 31 data yang terdeteksi mengandung outlier.</li>
+</ul>
+<p><strong>LOCAL OUTLIER FACTOR</strong></p>
+<hr>
+<p>Adalah metode yang digunakan untuk mendeteksi outlier dalam data dengan memperhatikan konteks lokal dari setiap data poin. LOF menghitung seberapa “aneh” atau tidak biasa suatu poin data jika dibandingkan dengan tetangga-tetangganya. Poin yang memiliki LOF tinggi dibandingkan dengan tetangganya dapat dianggap sebagai outlier.</p>
+<p>Adapun tahap-tahp untuk mengidentifikasi outlier pada data dengan menggunakan Local Outlier Factor :</p>
+<ol type="1">
+<li>Hitung Jarak Antar Data</li>
+</ol>
+<p>dimana jarak yang dihitung adalah jarak titik yang akan dievaluasi dengan semua titik didalam satu baris. Perhitungan Jarak dilakukan menggunakan perhitungan jarak euclidean.</p>
+<p><span class="math display">\[
+\text{distance}(p, q) = \sqrt{\sum_{i=1}^{n}(p_i - q_i)^2}
+\]</span></p>
+<p>dimana :</p>
+<p>p = titik yang akan dievaluasi q = titik selain titik p</p>
+<ol start="2" type="1">
+<li>Hitung Kepadatan Lokal</li>
+</ol>
+<p>Setelah jarak diketahui, maka selanjutnya kepadatan lokal dari titik data tersebut perlu dihitung. Kepadatan lokal dapat dihitung dengan membandingkan jumlah titik-titik tetangga dalam jarak tertentu (radius) terhadap titik data yang sedang dievaluasi.</p>
+<p><span class="math display">\[
+\text{Local Density}(p) = \frac{\text{jumlah tetangga dalam radius}}{\text{jumlah total data}}
+\]</span></p>
+<ol start="3" type="1">
+<li>Hitung Local Reachability Density(LRD)</li>
+</ol>
+<p>Hitung kepadatan jarak (reachability distance) dari titik data (p) terhadap tetangganya (q). Local Reachability Density dari titik p terhadap tetangga q dihitung sebagai rata-rata dari jarak antara q dan p terhadap tetangga q:</p>
+<p><span class="math display">\[
+\text{reachdist}(p, q) = \max(\text{distance}(p, q), \text{radius})
+\]</span></p>
+<p><span class="math display">\[
+\text{Local Reachability Density}(p) = \frac{1}{\text{jumlah tetangga}} \sum_{q \in N_{\text{radius}}(p)} \frac{\text{reachdist}(p, q)}{\text{density}(q)}
+\]</span></p>
+<p>dimana: - N radius(p) adalah himpunan tetangga dalam radius tertentu radius dari titik p. - density(q) adalah kepadatan lokal dari tetangga q.</p>
+<ol start="4" type="1">
+<li>Hitung Nilai LOF</li>
+</ol>
+<p>LOF dari suatu titik data (p) dihitung sebagai rasio dari rata-rata Local Reachability Density dari tetangganya terhadap kepadatan lokalnya sendiri:</p>
+<p><span class="math display">\[
+\text{LOF}(p) = \frac{1}{\text{jumlah tetangga}} \sum_{q \in N_{\text{radius}}(p)} \frac{\text{Local Reachability Density}(q)}{\text{Local Reachability Density}(p)}
+\]</span></p>
+<p>dimana :</p>
+<p>LOF yang tinggi menunjukkan bahwa titik tersebut memiliki kepadatan lokal yang lebih rendah dibandingkan dengan tetangganya, sehingga cenderung menjadi outlier.</p>
+<p>Contoh Kasus, untuk mencari outlier pada data misalkan terdapat tabel seperti dibawah ini:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Langkah 1 : Hitung Jarak Antar Data lalu nilai radius yang diambil adalah 5</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th>Jarak</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+<td>1,41 ; 4,47 ; 4,47</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>1,41 ; 3,16</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+<td>4,47</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>2</td>
+<td>4,47 ; 3,16 ; 4,24</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>5</td>
+<td>4,24</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Langkah 2 : Hitung jumlah tetangga dalam radius 5</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th>Jumlah Tetangga</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>5</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Langkah 3 : Hitung Local Reachability Density</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th>Jarak</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+<td>(1,41 + 4,47 + 4,47) / 3 = 3,45</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>(1,41 + 3,16) /2 = 2,285</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+<td>4,47</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>2</td>
+<td>(4,47 + 3,16 + 4,24) / 3 = 3,95</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>5</td>
+<td>4,24</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Langkah 4 : Menghitung nilai LOF data</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>Y</th>
+<th>LOF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+<td>(1/3,45) x ((2,285 + 4,47 + 3,95) / 3) = 1,03</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>(1/2,285) x ((3,45 + 3,95) / 2) = 1,61</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>8</td>
+<td>(1/4,47) x ((3,45)) = 0,77</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>2</td>
+<td>(1/3,95) x ((3,45 + 2,285 + 4,24) / 3) = 0,83</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>5</td>
+<td>(1/4,24) x ((3,95)) = 0.936</td>
+</tr>
+</tbody>
+</table>
+<p>Dengan begitu, nilai yang berkemungkinan menjadi outlier adalah baris 2 dan baris 1</p>
+<p>Inter Pretasi Local Outlier Factor :</p>
+<ul>
+<li>Jika LOF &gt; 1, itu menunjukkan bahwa kepadatan lokal dari titik p lebih rendah daripada rata-rata kepadatan lokal dari tetangganya. Artinya, titik tersebut memiliki sifat yang “aneh” atau berbeda dari lingkungan sekitarnya dan cenderung menjadi outlier.</li>
+<li>Jika LOF ≈ 1, itu menunjukkan bahwa kepadatan lokal dari titik p mirip dengan rata-rata kepadatan lokal tetangganya.</li>
+<li>Jika LOF &lt; 1, itu menunjukkan bahwa kepadatan lokal dari titik p lebih tinggi daripada rata-rata kepadatan lokal dari tetangganya, sehingga cenderung menjadi titik yang tidak aneh.</li>
+</ul>
+<div class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat model LOF</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> LocalOutlierFactor(n_neighbors<span class="op">=</span><span class="dv">20</span>)  <span class="co"># Jumlah tetangga yang digunakan </span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>outlier_scores <span class="op">=</span> clf.fit_predict(data) <span class="co"># untuk menghitung nilai LOF</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan indeks outlier</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>outlier_indices <span class="op">=</span> np.where(outlier_scores <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>)[<span class="dv">0</span>] <span class="co"># menampilkan indeks/baris apa saja yang memiliki oulier</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Indeks outlier:"</span>,outlier_indices)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Indeks outlier:"</span>,<span class="bu">len</span>( outlier_indices))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Indeks outlier: [ 324  325  354  374  396  400  442  444  480  530  535  538  559  564
+  652  773  774  911  917  923  982 1043 1079 1081 1131 1186 1235 1244
+ 1478 1558 1574]
+Indeks outlier: 31</code></pre>
+</div>
+</div>
+</section>
+<section id="identifikasi-proporsi-jumlah-masing-masing-kelas-dalam-data" class="level3" data-number="1.2.10">
+<h3 data-number="1.2.10" class="anchored" data-anchor-id="identifikasi-proporsi-jumlah-masing-masing-kelas-dalam-data"><span class="header-section-number">1.2.10</span> IDENTIFIKASI PROPORSI JUMLAH MASING-MASING KELAS DALAM DATA</h3>
+<p>Untuk mencapai hasil maksimal, perlu dilakukan identifikasi proporsi jumlah data dari masing-masing kelas. Dengan begitu ketidakseimbangan data disetiap kelas pada data red wine ini dapat ditangani dengan menyeimbangkan jumlah data disetiap kelasnya.</p>
+<p>Hasil Identifikasi Proporsi Jumlah Masing-Masing Kelas dalam data :</p>
+<p>Berdasarkan jumlah data pada setiap kelas yang telah di definisikan sebelumnya, dapat diketahui bahwasan nya pada data jumlah masing-masing kelas tidak seimbang dengan perbandingan :</p>
+<ul>
+<li>86.4% dari jumlah seluruh data untuk data yang diidentifikasi memiliki kualitas yang buruk</li>
+<li>13.5% dari jumlah seluruh data untuk data yang diidentifikasi termasuk memiliki kualitas yang bagus.</li>
+</ul>
+<div class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#untuk menghitung berapa banyak kelas dan jumlah nya dalam sekumpulan data</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>target.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="71">
+<pre><code>quality
+0    1382
+1     217
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="preprocessing-data" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="preprocessing-data"><span class="header-section-number">1.3</span> PREPROCESSING DATA</h2>
+<hr>
+<p><strong>Dari Data Understanding diatas dapat disimpulkan bahwasannya:</strong></p>
+<ul>
+<li>Didalam data tidak memiliki Missing Values</li>
+<li>Didalam data terdapat duplikat data</li>
+<li>Didalam data juga terdapat outlier yang terdeteksi</li>
+<li>Terjadi Inbalancing pada jumlah masing-masing kelas dalam data</li>
+</ul>
+<p><strong>Maka dari itu perlu dilakukan beberapa langkah preprocessing pada data seperti:</strong></p>
+<section id="penanganan-duplikat-data" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="penanganan-duplikat-data"><span class="header-section-number">1.3.1</span> PENANGANAN DUPLIKAT DATA</h3>
+<hr>
+<p>Setelah dilakukan Identifikasi duplikat data pada tabel red wine. Maka, untuk melakukan penanganan pada masalah ini maka dapat dilakukan penghapusan data duplikat yang telah diidentifikasi sebelumnya di tahap data understanding</p>
+<div class="cell" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># variabel data yang menyimpan data dilakukan drop atau penghapusan data yang  duplikat</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>data.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="penanganan-outlier-pada-data" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="penanganan-outlier-pada-data"><span class="header-section-number">1.3.2</span> PENANGANAN OUTLIER PADA DATA</h3>
+<p>Langkah yang dapat diambil untuk menangani terdapatnya outlier pada data adalah dapat dengan menghapus baris-baris data yang di beberapa kolomnya mengandung oulier.</p>
+<div class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> LocalOutlierFactor(n_neighbors<span class="op">=</span><span class="dv">20</span>)  <span class="co"># Jumlah tetangga yang digunakan </span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>outlier_scores <span class="op">=</span> clf.fit_predict(data) <span class="co"># untuk menghitung nilai LOF</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan indeks outlier</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>outlier_indices <span class="op">=</span> np.where(outlier_scores <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>)[<span class="dv">0</span>]</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>list_from_outlier_indices <span class="op">=</span> outlier_indices.tolist() <span class="co"># untuk mengubah tiped data pada variabel outlier_indices menjadi list</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>data_cleaned <span class="op">=</span> data[outlier_scores <span class="op">!=</span> <span class="op">-</span><span class="dv">1</span>]  <span class="co"># Mengambil baris yang bukan outlier</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data sebelum penghapusan outlier:"</span>,<span class="bu">len</span>(data))  <span class="co"># Menampilkan panjang dari data sebelum menghapus outlier</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data setelah penghapusan outlier:"</span>, <span class="bu">len</span>(data_cleaned)) <span class="co"># Menampilkan panjang dari data sesudah menghapus outlier</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Data sebelum penghapusan outlier: 1359
+Data setelah penghapusan outlier: 1334</code></pre>
+</div>
+</div>
+</section>
+<section id="penanganan-proporsi-jumlah-masing-masing-kelas-pada-data" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="penanganan-proporsi-jumlah-masing-masing-kelas-pada-data"><span class="header-section-number">1.3.3</span> PENANGANAN PROPORSI JUMLAH MASING-MASING KELAS PADA DATA</h3>
+<p>Dikarenakan terdapat ketidakseimbangan pada data disetiap kelasnya maka diperlukan sebuah proses balancing data agar jumlah data pada setiap kelasnya dapat seimbang untuk menanganin ketidakseimbangan data maka diperlukan suatu metode yaitu metode Random Over Sampling yang akan membuat jumlah data pada masing-masing kelas menjadi sama sehingga seimbang</p>
+<div class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>fitur_cleaned <span class="op">=</span> data_cleaned.drop(<span class="st">'quality'</span>, axis<span class="op">=</span> <span class="dv">1</span>) <span class="co"># memasukkan fitur selain kolom quality kedalam variabel fitur_cleaned</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>target_cleaned <span class="op">=</span> data_cleaned[<span class="st">'quality'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> y_value: <span class="dv">1</span> <span class="cf">if</span> y_value <span class="op">&gt;=</span> <span class="dv">7</span> <span class="cf">else</span> <span class="dv">0</span>) <span class="co"># memasukkan kolom quality kedalam variabel target_cleaned</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>BALANCING DATA</strong></p>
+<hr>
+<p>Balancing data adalah proses memastikan bahwa dataset yang digunakan untuk melakukan analisis atau pelatihan model memiliki distribusi yang seimbang di antara kelas-kelas yang berbeda. Hal ini sering kali terjadi dalam konteks klasifikasi di mana terdapat lebih sedikit contoh atau sampel untuk satu kelas dibandingkan dengan kelas lainnya. Ketika kelas-kelas dalam dataset tidak seimbang, model yang dibangun cenderung cenderung memprediksi kelas mayoritas dengan lebih baik daripada kelas minoritas, sehingga mengurangi performa model untuk kelas minoritas.</p>
+<p><strong>RANDOM OVER SAMPLING</strong></p>
+<hr>
+<p>RandomOverSampling adalah salah satu teknik dalam pengolahan data yang digunakan untuk menangani ketidakseimbangan dalam dataset kelas-kelas yang berbeda. Ketidakseimbangan terjadi ketika ada perbedaan signifikan dalam jumlah sampel antara kelas mayoritas dan kelas minoritas dalam dataset. Dalam RandomOverSampling, sampel dari kelas minoritas secara acak ditingkatkan untuk mencapai keseimbangan dengan kelas mayoritas. Ini dapat dilakukan dengan menduplikasi data dari kelas minoritas secara acak hingga jumlah sampelnya sebanding dengan kelas mayoritas.</p>
+<p>Berikut adalah langkah-langkah umum dalam melakukan RandomOverSampling:</p>
+<ol type="1">
+<li>Identifikasi Ketidakseimbangan</li>
+</ol>
+<p>Periksa jumlah sampel untuk setiap kelas dalam dataset Anda untuk menentukan kelas mana yang merupakan kelas mayoritas dan kelas mana yang merupakan kelas minoritas.</p>
+<ol start="2" type="1">
+<li>Penerapan RandomOverSampling</li>
+</ol>
+<p>Salah satu cara untuk menerapkan RandomOverSampling adalah dengan menggunakan pustaka atau modul dalam bahasa pemrograman seperti Python. Contohnya, modul imbalanced-learn menyediakan fungsi RandomOverSampler untuk melakukan oversampling secara acak.</p>
+<div class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inisialisasi RandomOverSampler</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>balancer <span class="op">=</span> RandomOverSampler(random_state<span class="op">=</span><span class="dv">42</span>) <span class="co"># menyimpan metode randomoversampler untuk menyeimbangkan jumlah kelas dalam data</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Menerapkan Random Over-Sampling untuk menyeimbangkan data</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>fitur_balance, target_balance <span class="op">=</span> balancer.fit_resample(fitur_cleaned, target_cleaned) <span class="co"># balancing diterapkan pada variabel fitur_cleaned dan target cleaned</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan data yang telah diseimbangkan</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hasil Penyeimbangan:'</span>, Counter(target_balance))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hasil Penyeimbangan: Counter({0: 1156, 1: 1156})</code></pre>
+</div>
+</div>
+<p>Setelah dilakukan balancing data maka data akan disimpan didalam sebuah file berekstensi pickle dengan tujuan jika ingin digunakan lagi untuk predksi maka data yang digunakan adalah data yang telah dinyatakan bersih dan memiliki kualitas data yang baik dikarenakn telah melewati pembersihand ata seperti penghapusan outlier dan penyeimbangan jumlah proporsi masing-masing kelas dalam data</p>
+<div class="cell" data-execution_count="76">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat DataFrame dari fitur dan target yang telah seimbang</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>data_clean <span class="op">=</span> pd.concat([fitur_balance, target_balance], axis<span class="op">=</span><span class="dv">1</span>) </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Menyimpan DataFrame ke dalam file CSV</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>data_clean.to_csv(<span class="st">'data_bersih.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># menghitung jumlah data setelah balancing data</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>count_data <span class="op">=</span> data_clean.shape[<span class="dv">0</span>]</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Jumlah Data Setelah Proses Balancing :"</span>, count_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Jumlah Data Setelah Proses Balancing : 2312</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="78">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan kelas dalam data sebelum dilakukan balancing data dengan menggunakan plot</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>pd.DataFrame({<span class="st">'quality'</span>: target_cleaned}), x<span class="op">=</span><span class="st">'quality'</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Original Class'</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan kelas dalam data sesudah dilakukan balancing data dengan menggunakan plot</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>pd.DataFrame({<span class="st">'quality'</span>: target_balance}), x<span class="op">=</span><span class="st">'quality'</span>)</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Random Over-Sampling With imblearn'</span>)</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="winequality_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="split-data" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="split-data"><span class="header-section-number">1.3.4</span> SPLIT DATA</h3>
+<hr>
+<p>Split Data adalah membagi data menjadi dset data uji dan set data training(latih) sehingga data fitur dan target masing-masing dibagi menjadi set data fitur training dan set data fitur testing serta set data target training dan set data target uji</p>
+<ol type="1">
+<li><p>set data pelatihan (training) Subset data yang digunakan untuk melatih model mesin. Model menggunakan data ini untuk belajar pola dan hubungan antara fitur (features) dan label (target).</p></li>
+<li><p>set data uji(test) Subset yang tidak terlibat dalam pelatihan model atau penyetelan parameter. Data ini digunakan untuk menguji kinerja model yang telah dilatih dan divalidasi. Ini memberikan perkiraan seberapa baik model akan berperforma pada data yang belum pernah dilihat sebelumnya.</p></li>
+</ol>
+<p>Pada Proyek ini data testing yang digunakan adalah 1/4 data (25%) dari jumlah keseluruhan data lalu untuk data tarining yang digunakan adalah sebanyak 3/4 (75%) data dar jumlah keseluruhan data dalam dataset fungsi train_test_split yang digunakan untuk membagi dataset menjadi set pelatihan (train set) dan set pengujian (test set). Ini membantu dalam mengevaluasi kinerja model pada data yang tidak digunakan selama pelatihan.</p>
+<ul>
+<li>fitur_balance: Matriks fitur dari dataset yang telah di-resampled dengan menggunakan Random Over-Sampling (X_ros).</li>
+<li>target_balance: Ini adalah vektor target yang sesuai dengan fitur_balance.</li>
+<li>test_size=0.25: Ini menentukan proporsi data yang akan dialokasikan untuk test set. Dalam hal ini, 25% dari total data akan digunakan sebagai test set.</li>
+<li>random_state=42: Ini digunakan untuk memastikan reproduktibilitas hasil. Jika kita memberikan nilai tertentu (dalam hal ini 42), maka setiap kali kita menjalankan fungsi ini, kita akan mendapatkan pembagian yang sama untuk set pelatihan dan set pengujian. Ini berguna ketika kita ingin hasil yang konsisten setiap kali kode dijalankan.</li>
+</ul>
+<p>Hasil dari fungsi train_test_split adalah empat kumpulan data:</p>
+<ul>
+<li>fitur_train: Matriks fitur dari set pelatihan.</li>
+<li>fitur_test: Matriks fitur dari set pengujian.</li>
+<li>target_train: Vektor target dari set pelatihan.</li>
+<li>target_test: Vektor target dari set pengujian.</li>
+</ul>
+<div class="cell" data-execution_count="79">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># membagi data dengan perbandingan data latih dan uji 4:1  </span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>fitur_train, fitur_test, target_train, target_test <span class="op">=</span> train_test_split(fitur_balance, target_balance, test_size<span class="op">=</span><span class="fl">0.25</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="normalisasi-data" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="normalisasi-data"><span class="header-section-number">1.3.5</span> NORMALISASI DATA</h3>
+<p>Normalisasi Data adalah salah satu proses dalam pre-processing data untuk mengatur dataset agar memenuhi standar tertentu. Data perlu dilakukan agar dapat mengurangi kemungkinan terjadinya redundansi data. Selain itu, normalisasi dagunakan untuk membantu menghindari anomali dalam pengolahan data dan memungkinkan desain basis data yang lebih efisien.</p>
+<p><strong>MINMAX</strong></p>
+<hr>
+<p>Pengertian</p>
+<p>MinMax Scaling adalah salah satu teknik untuk melakukan normalisasi pada data dengan merubah nilai-nilai dalam kumpulan data ke dalam rentang tertentu, biasanya antara 0 dan 1. Tujuan utamanya adalah untuk menjaga skala relatif antarfitur agar tidak mendominasi satu sama lain.</p>
+<p>Proses Min-Max Scaling dilakukan dengan langkah-langkah berikut:</p>
+<ol type="1">
+<li><p>Identifikasi Rentang: Tentukan rentang nilai yang ingin Anda gunakan. Biasanya, dalam Min-Max Scaling, rentang nilai yang dipilih adalah 0 hingga 1, tetapi ini bisa disesuaikan tergantung pada kasus penggunaan.</p></li>
+<li><p>Hitung Nilai Minimum dan Maksimum: Tentukan nilai minimum (min) dan nilai maksimum (max) dari setiap fitur dalam kumpulan data yang akan dinormalisasi.</p></li>
+<li><p>Normalisasi: Gunakan formula rumusn Min-Max Scaling untuk mengubah nilai-nilai dalam rentang yang ditentukan.</p></li>
+</ol>
+<p>Rumus Minmax Scaler</p>
+<p><span class="math display">\[ X' = \frac{X - min}{max - min} \]</span></p>
+<p>Dimana :</p>
+<ul>
+<li>X adalah nilai asli dari suatu kolom/fitur</li>
+<li>min adalah nilai minimum dari suatu kolom/fitur dalam dataset</li>
+<li>max adalah nilai maximum dari suatu kolom/fitur dalam dataset</li>
+<li>X’ adalah nilai X yang telah dinormalisasi.</li>
+</ul>
+<p>Berikut Contoh Penggunaan minmax pada data, sebagai berikut:</p>
+<ol type="1">
+<li>Terdapat sebuah tabel dengan kolom X, seperti berikut:</li>
+</ol>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>X`</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="1">
+<li>Untuk melakukan normalisasi dengan Min-Max Scaling, maka perlu diidentifikasi nilai tertingggi dan terendah pada kolom. Deketahui :</li>
+</ol>
+<ul>
+<li>Nilai terendah pada kolom X (min) = 2</li>
+<li>Nilai tertinggi pada kolom X (max) = 10</li>
+</ul>
+<ol start="3" type="1">
+<li>Lalu untuk menentukan nilai X yang telah dinormalisasi maka dengan menghitung setiap baris data yang dimasukkan kedalam rumus Min-Max Scaling seperti berikut:</li>
+</ol>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>X`</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>(2 - 2) / ( 10 - 2)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>(4 - 2) / ( 10 - 2)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>(3 - 2) / ( 10 - 2)</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>(10 - 2) / ( 10 - 2)</td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li>Sehingga nilai X’ hasil normalisasi dapat diketahui seperti berikut :</li>
+</ol>
+<table class="table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>X`</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>0.25</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>0.125</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-execution_count="80">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>mm <span class="op">=</span> MinMaxScaler() <span class="co"># meyimpan normalisasi MinMax Scaler() dalam variabel</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>mm.fit(fitur_train)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>minmax_training <span class="op">=</span> mm.fit_transform(fitur_train) <span class="co"># melakukan normalisasi pada kolom fitur latih</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>minmax_testing <span class="op">=</span> mm.transform(fitur_test) <span class="co"># melakukan normalisasi pada kolom fitur uji</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'minmax.pkl'</span>, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    pickle.dump(mm, <span class="bu">file</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="ranking-setiap-fitur-dalam-data" class="level3" data-number="1.3.6">
+<h3 data-number="1.3.6" class="anchored" data-anchor-id="ranking-setiap-fitur-dalam-data"><span class="header-section-number">1.3.6</span> RANKING SETIAP FITUR DALAM DATA</h3>
+<p>Untuk memilih fitur terbaik dapat dengan me-renking fitur-fitur didalm dataset dengan mencari nilai mutual information setiap fitur agar dapat dibandingkan diurutkan dengan fitur lainnya. Padaproyek ini digunakan metode SelectKBest dengan mencari nilai mutual information dari setiap fitur.</p>
+<section id="mutual-information" class="level4" data-number="1.3.6.1">
+<h4 data-number="1.3.6.1" class="anchored" data-anchor-id="mutual-information"><span class="header-section-number">1.3.6.1</span> MUTUAL INFORMATION</h4>
+<p>Mutual information (MI) adalah metrik yang berguna dalam pemilihan fitur karena mengukur seberapa banyak informasi yang saling terkait antara fitur (variabel independen) dengan variabel target (variabel dependen). Dalam konteks pemilihan fitur, kita ingin mempertahankan fitur-fitur yang memiliki hubungan yang kuat atau tinggi dalam menjelaskan variabel target.</p>
+<p>Rumus Mutual Information (MI) between X and Y:</p>
+<p><span class="math display">\[
+\text{MI}(X;Y) = \sum_{x \in X} \sum_{y \in Y} p(x, y) \log \left(\frac{p(x, y)}{p(x) \cdot p(y)}\right)
+\]</span></p>
+<p>Dimana:</p>
+<ul>
+<li>MI(X;Y) adalah mutual information antara variabel X dan Y.</li>
+<li>p(x,y) adalah probabilitas bersama dari X=x dan Y=y.</li>
+<li>p(x) adalah probabilitas margina X=x.</li>
+<li>p(y) adalah probabilitas margina Y=y.</li>
+</ul>
+<p>Dari tahap ini dihasilkan rangking dari setiap kolom atau fitur sehingga dapat mengetahui fitur-fitur yang memiliki ciri khas penting untuk data red wine itu sendiri. Pada tahap skenario percobaan nantinya akan dipilih fitur-fitur yang memiliki nilai mutual information tertinggi. Untuk memilih fitur-fitur yang terbaik dapat dimulai dengan menghapus fitur yang memiliki nilai mutual information paling rendah lalu skenario bergeser ke kiri dimana fitur yang dihapus yaitu fitur dengan mutual information terendah nomer 2 dan paling rendah. pemilihan fitur terus dilakukan pada skenario percobaan hingga mencapai akurasi tertinggi.</p>
+<p>Contoh Kasus untuk mengurutkan kolom dengan mutual information paling tinggi hingga terendah, di berikan tabel berikut :</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Variabel_1</th>
+<th>Variabel_2</th>
+<th>Variabel_Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>b</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>a</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>1</td>
+<td>3</td>
+<td>a</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Langkah 1 : Hitung distribusi probabilitas</li>
+</ul>
+<p>Untuk Variabel_Target: &gt; - P(Target=a) = 3/5 &gt; - P(Target=b) = 2/5</p>
+<p>Untuk Variabel_1: &gt; - P(Variabel_1=1) = 2/5 &gt; - P(Variabel_1=2) = 2/5 &gt; - P(Variabel_1=3) = 1/5</p>
+<p>Untuk Variabel_2:</p>
+<blockquote class="blockquote">
+<ul>
+<li>P(Variabel_2=1) = 1/5</li>
+<li>P(Variabel_2=2) = 2/5</li>
+<li>P(Variabel_2=3) = 2/5</li>
+</ul>
+</blockquote>
+<ul>
+<li>Langkah 2 : Hitung Entropi</li>
+</ul>
+<p>Entropi(variabel_Target) = - (3/5) * log2(3/5) - (2/5) * log2(2/5) ≈ 0.971</p>
+<blockquote class="blockquote">
+<ul>
+<li>Entropi(Variabel_1) = - (2/5) * log2(2/5) - (2/5) * log2(2/5) - (1/5) * log2(1/5) ≈ 1.571</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li>Entropi(Variabel_2) = - (1/5) * log2(1/5) - (2/5) * log2(2/5) - (2/5) * log2(2/5) ≈ 1.571</li>
+</ul>
+</blockquote>
+<ul>
+<li>Langkah 3 : Hitung Conditional Entropi</li>
+</ul>
+<p>Untuk setiap nilai Variabel_1, hitung Entropi(Target|Variabel_1).</p>
+<blockquote class="blockquote">
+<p>Variabel_1</p>
+</blockquote>
+<p>Conditional_Entropy(Target | Variabel_1) = P(Variabel_1=1) * Entropi(Target|Variabel_1=1) + P(Variabel_1=2) * Entropi(Target|Variabel_1=2) + P(Variabel_1=3) * Entropi(Target|Variabel_1=3)</p>
+<blockquote class="blockquote">
+<ul>
+<li>Entropi(Target|Variabel_1=1) = - (1/2) * log2(1/2) - (1/2) * log2(1/2) = 1.0</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li>Entropi(Target|Variabel_1=2) = - (1/1) * log2(1/1) - (1/1) * log2(1/1) = 0.0</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li>Entropi(Target|Variabel_1=3) = - (1/1) * log2(1/1) = 0.0</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>Conditional_Entropy(Target | Variabel_1) = (2/5)×1.0+(2/5)×0.0+(1/5)×0.0 = 0.4</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Variabel_2</p>
+</blockquote>
+<p>Conditional_Entropy(Target | Variabel_2) = P(Variabel_2=1) * Entropi(Target|Variabel_2=1) + P(Variabel_2=2) * Entropi(Target|Variabel_2=2) + P(Variabel_2=3) * Entropi(Target|Variabel_2=3)</p>
+<blockquote class="blockquote">
+<ul>
+<li>Entropi(Target | Variabel_2=1) = - (1) * log2(1) = 0</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li>Entropi(Target | Variabel_2=2) = - (0.5) * log2(0.5) - (0.5) * log2(0.5) = 1.0</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li>Entropi(Target | Variabel_2=3) = - (0.5) * log2(0.5) - (0.5) * log2(0.5) = 1.0</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<p>Conditional_Entropy(Target | Variabel_2) = (1/5) * 0 + (2/5) * 1.0 + (2/5) * 1.0 = 0.8</p>
+</blockquote>
+<ul>
+<li>Langkah 4 : Hitung Mutual Information</li>
+</ul>
+<blockquote class="blockquote">
+<ul>
+<li>Mutual_Information(Variabel_1;Target) = 0.971 - 0.4 = 0.571</li>
+</ul>
+</blockquote>
+<blockquote class="blockquote">
+<ul>
+<li>Mutual_Information(Variabel_2;Target) = 0.971 - 0.8 = 0.171</li>
+</ul>
+</blockquote>
+<p>Dengan begitu variabel yang lebih berpengaruh adalah Variabel_1 dari Variabel_2</p>
+<div class="cell" data-execution_count="81">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># menyimpan metode selectkbest dengan menggunakan mutual information lalu fitur yang dideleksi adalah semua fitur</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>selector <span class="op">=</span> SelectKBest(score_func<span class="op">=</span>mutual_info_classif, k<span class="op">=</span><span class="st">'all'</span>) </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># untuk mengubah dataset fitur menjadi X_new, yang hanya berisi fitur terbaik yang dipilih oleh SelectKBest berdasarkan skor yang dihitung sebelumnya.</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>X_new <span class="op">=</span> selector.fit_transform(fitur_balance,target_balance)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengambil skor dari fitur-fitur dalam dataset. Skor-skor ini merepresentasikan informasi gain atau kepentingan setiap fitur terhadap label kelas.</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> selector.scores_</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Menyimpan skor fitur dan nama fitur dalam variabel terpisah untuk digunakan dalam visualisasi.</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>feature_scores <span class="op">=</span> selector.scores_</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>feature_names <span class="op">=</span> [<span class="st">'fixed acidity'</span>, <span class="st">'volatile acidity'</span>, <span class="st">'citric acid'</span>, <span class="st">'residual sugar'</span>,</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>       <span class="st">'chlorides'</span>, <span class="st">'free sulfur dioxide'</span>, <span class="st">'total sulfur dioxide'</span>, <span class="st">'density'</span>,</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>       <span class="st">'pH'</span>, <span class="st">'sulphates'</span>, <span class="st">'alcohol'</span>]</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengurutkan indeks fitur berdasarkan skor fitur dari yang tertinggi ke terendah.</span></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>sorted_indices <span class="op">=</span> feature_scores.argsort()[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengurutkan skor fitur dan nama fitur sesuai dengan indeks yang telah diurutkan sebelumnya.</span></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>sorted_scores <span class="op">=</span> feature_scores[sorted_indices]</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>sorted_feature_names <span class="op">=</span> [feature_names[i] <span class="cf">for</span> i <span class="kw">in</span> sorted_indices]</span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the feature importances</span></span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a><span class="co"># digunakan untuk membuat diagram batang yang merepresentasikan skor fitur.</span></span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>plt.bar(<span class="bu">range</span>(<span class="bu">len</span>(sorted_feature_names)), sorted_scores)</span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a><span class="co"># digunakan untuk menambahkan label pada sumbu x (fitur) dengan rotasi 90 derajat agar lebih mudah dibaca.</span></span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a>plt.xticks(<span class="bu">range</span>(<span class="bu">len</span>(sorted_feature_names)), sorted_feature_names, rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Label sumbu x adalah nama fitur, sedangkan label sumbu y adalah skor fitur (information gain).</span></span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Features'</span>)</span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Information Gain'</span>)</span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Feature Importance (Information Gain)'</span>) <span class="co"># memberikan judul plot.</span></span>
+<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co"># menampilkan plot.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="winequality_files/figure-html/cell-24-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p><strong>Setelah itu dilakukan skenario percobaan , diketahui bahwa fitur yang terbaik untuk digunakan dalam klasifikasi data red wine, diantaranya</strong></p>
+<ul>
+<li>fixed acidity</li>
+<li>volatile acidity</li>
+<li>citric acid</li>
+<li>residual sugar</li>
+<li>chlorides</li>
+<li>free sulfur dioxide</li>
+<li>total sulfur dioxide</li>
+<li>density</li>
+<li>pH</li>
+<li>sulphates</li>
+<li>alcohol</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="modeling" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="modeling"><span class="header-section-number">1.4</span> MODELING</h2>
+<hr>
+<p>Tahap modeling dalam analisis data adalah tahap dimana digunakannya berbagai teknik dan algoritma untuk membangun model prediktif atau deskriptif dari data yang telah siapkan. Ini merupakan salah satu langkah penting dalam proses analisis data dan umumnya terdiri dari beberapa langkah, tergantung pada jenis analisis yang dilakukan.</p>
+<section id="random-forest" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="random-forest"><span class="header-section-number">1.4.1</span> RANDOM FOREST</h3>
+<hr>
+<p>Random Forest adalah algoritma pembelajaran terawasi yang digunakan untuk tugas klasifikasi dan regresi dalam machine learning. Ini merupakan bagian dari keluarga algoritma yang dikenal sebagai ensemble learning, yang menggabungkan hasil beberapa model untuk meningkatkan kinerja dan ketepatan prediksi.</p>
+<p>Konsep inti dari Random Forest adalah membuat sejumlah besar pohon keputusan saat melakukan prediksi. Setiap pohon keputusan dibuat berdasarkan sampel acak dari data pelatihan dan fitur yang dipilih secara acak. Proses ini mengurangi risiko overfitting (memfitting data pelatihan secara berlebihan) yang sering terjadi pada pohon keputusan tunggal.</p>
+<p>Selama proses pelatihan, setiap pohon keputusan dalam hutan acak memilih subset data yang diambil secara acak dan subset fitur untuk membuat keputusan. Ketika melakukan prediksi, setiap pohon memberikan hasilnya, dan hasil akhir dari Random Forest diperoleh dengan mengambil mayoritas suara dari semua pohon keputusan (untuk klasifikasi) atau rerata hasil (untuk regresi).</p>
+<p>Kelebihan dari Random Forest termasuk kemampuannya dalam menangani data yang besar dengan fitur yang banyak, serta kemampuan untuk mengatasi overfitting. Namun, seperti halnya dengan banyak algoritma machine learning, pengaturan parameter yang tidak tepat atau kekurangan pemrosesan data yang tepat dapat mempengaruhi kinerja Random Forest.</p>
+<p><strong>Prinsip kerja utama algoritma Random Forest</strong></p>
+<ol type="1">
+<li>Pemilihan Sampel Acak (Random Sampling):</li>
+</ol>
+<p>Dari dataset yang ada, Random Forest melakukan sampling acak dengan penggantian (bootstrap sampling) untuk membuat dataset yang lebih kecil namun representatif. Hal ini membantu dalam membangun berbagai pohon keputusan yang berbeda.</p>
+<ol start="2" type="1">
+<li>Pembangunan Pohon Keputusan (Decision Tree):</li>
+</ol>
+<p>Setiap pohon keputusan dibangun menggunakan subset dari data yang diambil secara acak pada langkah pertama. Pohon-pohon ini dibuat dengan membagi data berulang-ulang berdasarkan fitur-fitur yang tersedia, untuk membuat keputusan yang optimal pada setiap simpulnya.</p>
+<ol start="3" type="1">
+<li>Voting atau Penggabungan (Voting or Aggregation):</li>
+</ol>
+<p>Setelah semua pohon keputusan selesai dibuat, hasil prediksi dari setiap pohon dikumpulkan. Pada tahap ini, jika masalahnya adalah klasifikasi, hasilnya diambil dengan cara mayoritas (melalui voting), sedangkan untuk regresi, hasilnya bisa diambil dengan rata-rata dari prediksi semua pohon.</p>
+<ol start="4" type="1">
+<li>Pengukuran Keakuratan (Accuracy Measurement):</li>
+</ol>
+<p>Untuk menentukan hasil akhir, model menghasilkan prediksi berdasarkan mayoritas suara dari semua pohon keputusan (untuk klasifikasi) atau nilai rata-rata (untuk regresi). Keakuratan model kemudian diukur dengan membandingkan prediksi tersebut dengan nilai sebenarnya dari data yang tidak terlibat dalam pelatihan.</p>
+<p><strong>Parameter Algoritma Random Forest</strong></p>
+<p>Jika ingin mengimplementasikan algoritma Random Forest dalam kasus klasifikasi, maka terdapat parameter-parameter yang perlu diperhatikan diantaranya : Parameter-parameter yang perlu diperhatikan saat membangun algoritma Random Forest adalah sebagai berikut:</p>
+<ol type="1">
+<li>Jumlah Pohon (n_estimators)</li>
+</ol>
+<p>Ini adalah jumlah pohon keputusan yang ingin Anda bangun dalam Random Forest. Semakin banyak pohon, biasanya hasilnya akan lebih baik, namun akan memakan lebih banyak waktu komputasi.</p>
+<ol start="2" type="1">
+<li>Kedalaman Pohon (max_depth)</li>
+</ol>
+<p>Menentukan kedalaman maksimum dari setiap pohon keputusan dalam ensemble. Kedalaman yang terlalu dalam dapat menyebabkan overfitting.</p>
+<ol start="3" type="1">
+<li>Min_samples_split dan min_samples_leaf</li>
+</ol>
+<p>Menentukan jumlah sampel minimum yang diperlukan untuk membagi node internal atau menjadi daun (leaf node) dalam pohon.</p>
+<p>Untuk mencari parameter terbaik dalam klasifikasi dengan menggunakan metode Random Forest dapat menggunakan metode bantuan untuk mencari parameter terbaik yang akan digunakan dalam kasus klasifikasi data red wine. Pada proyek ini digunakan metode GridSearch CV untuk menemukan parameter yang optimal dan terbaik untuk metode Random Forest seperti mencari jumlah pohon,kedalaman pohon, minmal pembagian sampel dan pembagian daun.</p>
+</section>
+<section id="gridsearchcv" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="gridsearchcv"><span class="header-section-number">1.4.2</span> GridSearchCV</h3>
+<hr>
+<p>adalah metode yang digunakan untuk menemukan parameter yang optimal bagi suatu model dalam machine learning dengan menggunakan validasi silang (cross-validation).GridSearchCV bekerja dengan melakukan pencarian parameter terbaik yang diberikan dalam rentang nilai yang telah ditentukan sebelumnya. Ini dilakukan dengan cara menguji semua kombinasi yang mungkin dari parameter-parameter yang diinginkan dan mengevaluasi performa model menggunakan teknik validasi silang untuk setiap kombinasi parameter.</p>
+<p>Langkah-langkah umum yang dilakukan oleh GridSearchCV adalah sebagai berikut:</p>
+<ul>
+<li><p>Spesifikasi Model dan Parameter: Tentukan model yang ingin Anda gunakan serta parameter apa yang ingin Anda uji. Misalnya, jika Anda menggunakan model Random Forest, parameter seperti jumlah pohon, kedalaman maksimum, dan fitur yang harus dipertimbangkan.</p></li>
+<li><p>Definisikan Grid Parameter: Buat daftar parameter yang ingin diuji dengan rentang nilai-nilai yang berbeda untuk setiap parameter. Ini membentuk sebuah grid atau kisi dari kombinasi parameter-parameter yang mungkin.</p></li>
+<li><p>Cross-Validation: Gunakan teknik validasi silang (biasanya K-Fold Cross-Validation) untuk membagi data menjadi subset pelatihan dan validasi. Setiap kombinasi parameter akan dievaluasi pada setiap lipatan untuk mendapatkan skor evaluasi.</p></li>
+<li><p>Pemilihan Parameter Terbaik: Setelah proses validasi selesai, GridSearchCV akan menentukan kombinasi parameter terbaik yang memberikan performa terbaik sesuai dengan metrik evaluasi yang telah ditentukan sebelumnya (misalnya, akurasi, F1-score, dll.).</p></li>
+<li><p>Penggunaan Model Terbaik: Setelah menemukan parameter terbaik, Anda dapat menggunakan model dengan parameter tersebut untuk membuat prediksi&nbsp;pada&nbsp;data&nbsp;baru</p></li>
+</ul>
+<p>Setelah dilakukan skenario perulangan untuk menghasilkan model terbaik, dapat diketahui bahwasannya model klasifikasi yang terbaik untuk data anggur merah ini adalah dengan menggunakan</p>
+<ul>
+<li>Metode Random Forest</li>
+<li>Metode normalisasi nya adalah MINMAX Scaler</li>
+<li>Banyak Fitur yang digunakan dalam data sebanyak 11 fitur</li>
+</ul>
+<div class="cell" data-execution_count="82">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the parameter grid for Random Forest</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>param_grid <span class="op">=</span> {</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'n_estimators'</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>],  <span class="co"># You can adjust the number of trees</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'max_depth'</span>: [<span class="va">None</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>],  <span class="co"># You can adjust the maximum depth of each tree</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'min_samples_split'</span>: [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>],</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'min_samples_leaf'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Random Forest model</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>random_forest <span class="op">=</span> RandomForestClassifier()</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="co"># MINMAX</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>grid_search2 <span class="op">=</span> GridSearchCV(estimator<span class="op">=</span>random_forest, param_grid<span class="op">=</span>param_grid, cv<span class="op">=</span><span class="dv">5</span>, scoring<span class="op">=</span><span class="st">'accuracy'</span>)</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>grid_search2.fit(minmax_training, target_train)</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Best Parameters MINMAX:"</span>, grid_search2.best_params_)</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>best_n_estimators_minmax <span class="op">=</span> grid_search2.best_params_[<span class="st">'n_estimators'</span>]</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>best_max_depth_minmax <span class="op">=</span> grid_search2.best_params_[<span class="st">'max_depth'</span>]</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>best_min_samples_split_minmax <span class="op">=</span> grid_search2.best_params_[<span class="st">'min_samples_split'</span>]</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>best_min_samples_leaf_minmax <span class="op">=</span> grid_search2.best_params_[<span class="st">'min_samples_leaf'</span>]</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Parameter dalam metode yang digunakan, sebagai berikut </span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"jumlah best estimator  :"</span>,best_n_estimators_minmax,<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"best maksimal kedalaman  :"</span>,best_max_depth_minmax,<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"best minimal pembagian sampel  :"</span>,best_min_samples_split_minmax,<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"best minimal sampel daun  :"</span>,best_min_samples_leaf_minmax,<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Best Parameters MINMAX: {'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+Parameter dalam metode yang digunakan, sebagai berikut 
+
+jumlah best estimator  : 300 
+
+best maksimal kedalaman  : 30 
+
+best minimal pembagian sampel  : 2 
+
+best minimal sampel daun  : 1 
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="83">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MINMAX</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co">#membuat model klasifikasi Random Forest dari parameter terbaik yang telah diketahui di proses sebelumnya</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>model_rf_minmax <span class="op">=</span> RandomForestClassifier( max_depth<span class="op">=</span> best_max_depth_minmax,min_samples_leaf<span class="op">=</span> best_min_samples_leaf_minmax,min_samples_split<span class="op">=</span> best_min_samples_split_minmax, n_estimators<span class="op">=</span> best_n_estimators_minmax)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Melatih model RandomForestClassifier dengan dataset latihan (minmax_training) yang telah dinormalisasi dan labelnya (target_train).</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>model_rf_minmax.fit(minmax_training, target_train)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Menggunakan model yang telah dilatih untuk melakukan prediksi pada dataset pengujian (minmax_testing) yang juga telah dinormalisasi.</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>y_pred_minmax <span class="op">=</span> model_rf_minmax.predict(minmax_testing)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghitung akurasi dari prediksi yang dilakukan oleh model RandomForestClassifier </span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>accuracy_rf_minmax <span class="op">=</span> accuracy_score(target_test, y_pred_minmax)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"AKURASI RANDOM FOREST"</span>)</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"AKURASI minmax :"</span>,accuracy_rf_minmax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>AKURASI RANDOM FOREST
+AKURASI minmax : 0.9377162629757786</code></pre>
+</div>
+</div>
+</section>
+<section id="simpan-model-klasifikasi" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="simpan-model-klasifikasi"><span class="header-section-number">1.4.3</span> SIMPAN MODEL KLASIFIKASI</h3>
+<p>Untuk keperluan Prediksi nanti pada tahap Deployment, maka model terbaik yang telah diterapkan saat ini disimpan untuk kasus prediksi kualitas red wine kedepannya sehingga tidak perlu lagi mencari-cari model terbaik untuk melakukan prediksi pada data uji baru nantinya</p>
+<div class="cell" data-execution_count="84">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'best_model_rf_minmax.pkl'</span>, <span class="st">'wb'</span>) <span class="im">as</span> model_file:</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    pickle.dump(model_rf_minmax,model_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="evaluasi-model" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="evaluasi-model"><span class="header-section-number">1.5</span> EVALUASI MODEL</h2>
+<hr>
+<p>Tahap evaluasi model adalah langkah penting dalam proses pembangunan model prediktif atau deskriptif untuk memastikan bahwa model yang dibuat dapat memberikan hasil yang berguna dan akurat. Evaluasi model dilakukan setelah proses pelatihan model untuk memahami seberapa baik model tersebut dapat melakukan prediksi atau generalisasi pada data yang belum pernah dilihat sebelumnya.</p>
+<p>Pada tahap ini model terbaik yang diperoleh pada tahap modeling dilakukan validasi dengan menampilkan nilai confusion matrix nya atau laporan klasifikasinya dengan menampilkan grafik ROC-AUC</p>
+<p><strong>HASIL TABEL KEBINGUNGAN DAN MATRIKS EVALUASI</strong></p>
+<hr>
+<p>Pada tahap ini dilakukan evaluasi terhadap model terbaik yang telah dibuat pada tahap modelling sebelumnya, sehingga menghasilkan beberapa evaluasi yang di representasikan dalam bentuk Tabel Kebingungan maupun Matriks Evaluasi:</p>
+<p><strong>Tabel Kebingungan</strong></p>
+<p>Didalam Tabel Kebingungan dihasilkan nilai dari TP,FP,FN dan TN seperti berikut:</p>
+<ul>
+<li>True Positive (TP): 342</li>
+<li>True Negative (TN): 317</li>
+<li>False Positive (FP): 17</li>
+<li>False Negative (FN): 3</li>
+</ul>
+<p><strong>Matriks Evaluasi</strong></p>
+<p>Didalam Matriks Evaluasi dapat diketahui nilai-nilai dari beberapa bagian di matriks Evaluasi diantaranya :</p>
+<ul>
+<li>Akurasi Model : 0.97</li>
+<li>Score ROC-AUC : 0.9702</li>
+<li>Nilai Presisi, Recall, F1-Score dan Support setiap kelas yang terdapat didalam data:</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Pesisi</th>
+<th>Recall</th>
+<th>f1-score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kualitas Baik</td>
+<td>0.95</td>
+<td>0.95</td>
+<td>0.97</td>
+</tr>
+<tr class="even">
+<td>Kualitas Buruk</td>
+<td>0.99</td>
+<td>0.99</td>
+<td>0.97</td>
+</tr>
+</tbody>
+</table>
+<p><strong>HASIL INTERPRETASI ROC-AUC</strong></p>
+<hr>
+<p>Dari kurva ROC yang dihasilkan dapat disimpulkan bahwasannya nilai AUC lebih mendekati nilai 1, hal ini menandakan bahwasannya model yang diterapkan mampu membedakan antara kelas porsitif dan kelas negatif dengan baik.</p>
+<section id="confusion-matrix" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="confusion-matrix"><span class="header-section-number">1.5.1</span> CONFUSION MATRIX</h3>
+<hr>
+<p>Confusion matrix adalah sebuah tabel yang digunakan dalam evaluasi kinerja model klasifikasi untuk memahami performa model dalam memprediksi kelas-kelas target. Matrix ini memiliki empat sel yang mewakili:</p>
+<ol type="1">
+<li><p>True Positive (TP): Prediksi yang benar ketika kelas sebenarnya adalah positif.</p></li>
+<li><p>True Negative (TN): Prediksi yang benar ketika kelas sebenarnya adalah negatif.</p></li>
+<li><p>False Positive (FP): Prediksi yang salah ketika model memprediksi positif tetapi kelas sebenarnya negatif (juga dikenal sebagai Type I error).</p></li>
+<li><p>False Negative (FN): Prediksi yang salah ketika model memprediksi negatif tetapi kelas sebenarnya positif (juga dikenal sebagai Type II error).</p></li>
+</ol>
+<p>Bentuk dari tabel Confusion Matrix</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Predicted Negative</th>
+<th>Predicted Positive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Actual Negative</td>
+<td>True Negative (TN)</td>
+<td>False Positive (FP)</td>
+</tr>
+<tr class="even">
+<td>Actual Positive</td>
+<td>False Negative (FN)</td>
+<td>True Positive (TP)</td>
+</tr>
+</tbody>
+</table>
+<p>Dari Confusion Matriks, kta dapat menghitung metrik evaluasi seperti akurasi, presisi, recall, F1-score, dan lainnya yang membantu dalam mengevaluasi performa model klasifikasi.</p>
+<p><strong>METRIKS EVALUASI</strong></p>
+<hr>
+<p>Metrik evaluasi adalah ukuran atau parameter yang digunakan untuk mengevaluasi kinerja suatu model atau sistem dalam melakukan tugas tertentu, seperti klasifikasi, regresi, atau tugas lainnya dalam bidang machine learning dan statistika. Metrik-metrik ini membantu dalam memahami seberapa baik atau buruk model tersebut dalam melakukan prediksi atau tugas yang ditetapkan.</p>
+<p>Beberapa metrik evaluasi umum dalam machine learning termasuk:</p>
+<ul>
+<li>Akurasi (Accuracy): Seberapa sering model memberikan prediksi yang benar secara keseluruhan.</li>
+</ul>
+<p>Rumus Akurasi :</p>
+<p><span class="math display">\[ Accuracy = \frac{TN + TP}{TN + FP + FN + TP} \]</span></p>
+<ul>
+<li>Presisi (Precision): Proporsi dari prediksi positif yang benar dibandingkan dengan semua prediksi positif yang dibuat oleh model</li>
+</ul>
+<p>Rumus Precision :</p>
+<p><span class="math display">\[ Precision = \frac{TP}{TP + FP} \]</span></p>
+<ul>
+<li>Recall (Sensitivity atau True Positive Rate): Proporsi dari kelas positif yang diprediksi dengan benar oleh model.</li>
+</ul>
+<p>Rumus Recall :</p>
+<p><span class="math display">\[ Recall = \frac{TP}{TP + FN} \]</span></p>
+<ul>
+<li>F1-Score: Nilai rata-rata harmonik antara presisi dan recall. Berguna ketika perlu menyeimbangkan antara presisi dan recall.</li>
+</ul>
+<p>Rumus F1-Score :</p>
+<p><span class="math display">\[ F1-Score = 2 × \frac {Presisi × Recall}{Presisi × Recall} \]</span></p>
+<ul>
+<li>Specificity (Specificity atau True Negative Rate): Proporsi dari kelas negatif yang diprediksi dengan benar oleh model.</li>
+</ul>
+<p>Rumus Specificity :</p>
+<p><span class="math display">\[ Specificity = \frac{TN}{TN + FP} \]</span></p>
+<div class="cell" data-execution_count="85">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluasi model dengan data uji MINMAX</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">EVALUASI MODEL DENGAN DATA UJI ZSCORE"</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Confusion Matrix ZSCORE:"</span>)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># menghiung confusion matriks antara target aktual hasil prediksi</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>conf_matrix <span class="op">=</span> confusion_matrix(target_test, y_pred_minmax)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(conf_matrix)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Mendapatkan nilai TP, TN, FP, FN dari confusion matrix</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>TN <span class="op">=</span> conf_matrix[<span class="dv">0</span>, <span class="dv">0</span>] <span class="co"># mengambil nilai TN dalam matriks</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>FP <span class="op">=</span> conf_matrix[<span class="dv">0</span>, <span class="dv">1</span>] <span class="co"># mengambil nilai FP dalam matriks</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>FN <span class="op">=</span> conf_matrix[<span class="dv">1</span>, <span class="dv">0</span>] <span class="co"># mengambil nilai FN dalam matriks</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>TP <span class="op">=</span> conf_matrix[<span class="dv">1</span>, <span class="dv">1</span>] <span class="co"># mengambil nilai TP dalam matriks</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">True Positive (TP):"</span>, TP) <span class="co"># menampilkan nilai True Positive</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"True Negative (TN):"</span>, TN) <span class="co"># menampilkan nilai True Negative</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"False Positive (FP):"</span>, FP) <span class="co"># menampilkan nilai False Positive</span></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"False Negative (FN):"</span>, FN) <span class="co"># menampilkan nilai False Negative</span></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Classification Report ZSCORE:"</span>)</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification_report(target_test, y_pred_minmax)) <span class="co"># mencetak laporan klasifikasi yang lengkap.</span></span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Ini akan mencetak skor ROC-AUC (Area Under the Receiver Operating Characteristic Curve) dari model klasifikasi untuk data pengujian. </span></span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ROC-AUC Score MINMAX:"</span>, roc_auc_score(target_test, y_pred_minmax)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+EVALUASI MODEL DENGAN DATA UJI ZSCORE
+Confusion Matrix ZSCORE:
+[[258  36]
+ [  0 284]]
+
+True Positive (TP): 284
+True Negative (TN): 258
+False Positive (FP): 36
+False Negative (FN): 0
+
+Classification Report ZSCORE:
+              precision    recall  f1-score   support
+
+           0       1.00      0.88      0.93       294
+           1       0.89      1.00      0.94       284
+
+    accuracy                           0.94       578
+   macro avg       0.94      0.94      0.94       578
+weighted avg       0.94      0.94      0.94       578
+
+ROC-AUC Score MINMAX: 0.9387755102040816</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="86">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>conf_matrix <span class="op">=</span> confusion_matrix(target_test, y_pred_minmax)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>sns.heatmap(conf_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'Blues'</span>, fmt<span class="op">=</span><span class="st">'g'</span>)</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Predicted labels'</span>)</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'True labels'</span>)</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Confusion Matrix'</span>)</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="winequality_files/figure-html/cell-29-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="grafik-roc-auc" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="grafik-roc-auc"><span class="header-section-number">1.5.2</span> GRAFIK ROC-AUC</h3>
+<hr>
+<p>Metrik evaluasi ROC (Receiver Operating Characteristic) dan AUC (Area Under the ROC Curve) adalah alat evaluasi yang digunakan untuk mengukur kinerja model klasifikasi, terutama ketika model harus mengklasifikasikan antara dua kelas.</p>
+<p><strong>Receiver Operating Characteristic (ROC) Curve</strong></p>
+<p>ROC Curve adalah adalah kurva grafik yang menampilkan kinerja model klasifikasi pada berbagai tingkat cutoff (threshold) untuk membedakan antara kelas positif dan negatif. Didalam ROC kurva dapat diketahui sensitivity (True Positive Rate) dan False Positive Rate (1-Specificity), untuk menunjukkan seberapa baik model klasifikasi sehingga dapat membedakan antara kelas positif dan negatif.</p>
+<p><strong>Area Under the ROC Curve (AUC-ROC)</strong></p>
+<p>AUC-ROC adalah ukuran dari luas area di bawah kurva ROC.</p>
+<ul>
+<li>Interpretasi :</li>
+</ul>
+<p>Nilai AUC berkisar antara 0 hingga 1. Semakin dekat nilainya ke 1, semakin baik model dalam membedakan antara kelas positif dan negatif. Jika nilainya 0.5, itu menunjukkan klasifikasi acak.</p>
+<div class="cell" data-execution_count="87">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kurva ROC-AUC untuk model dengan data uji minmax</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghitung False Positive Rate (FPR), True Positive Rate (TPR), dan threshold untuk kurva ROC. </span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># target_test adalah label yang sebenarnya dari data pengujian, sedangkan y_pred_minmax adalah hasil prediksi model terhadap data pengujian.</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>fpr_minmax, tpr_minmax, thresholds_minmax <span class="op">=</span> roc_curve(target_test, y_pred_minmax)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat figur (plot) dengan ukuran 8x6 inci.</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat plot untuk kurva ROC dengan sumbu x sebagai FPR dan sumbu y sebagai TPR.</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>plt.plot(fpr_minmax, tpr_minmax, label<span class="op">=</span><span class="st">'ROC Curve minmax (area = </span><span class="sc">%0.2f</span><span class="st">)'</span> <span class="op">%</span> roc_auc_score(target_test, y_pred_minmax))</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat garis putus-putus yang mewakili kurva ROC jika model tidak memiliki kemampuan prediktif (keberuntungan acak).</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="dv">1</span>], <span class="st">'k--'</span>)</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Menambahkan label sumbu x dan y pada plot untuk menunjukkan apa yang direpresentasikan oleh sumbu tersebut.</span></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'False Positive Rate'</span>)</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'True Positive Rate'</span>)</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Memberikan judul pada plot, menunjukkan bahwa ini adalah kurva ROC untuk model dengan data pengujian yang telah dinormalisasi menggunakan metode Min-Max.</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Receiver Operating Characteristic (ROC) Curve MINMAX'</span>)</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan legenda di pojok kanan bawah plot, menunjukkan informasi tambahan tentang kurva yang digambarkan.</span></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co">#  Menampilkan plot kurva ROC yang telah dibuat.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="winequality_files/figure-html/cell-30-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="deployment" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="deployment"><span class="header-section-number">1.6</span> DEPLOYMENT</h2>
+<hr>
+<p>Tahap deployment dalam konteks analisis data atau pengembangan model mengacu pada proses menerapkan atau menempatkan model yang telah dibuat ke dalam lingkungan produksi atau ke dalam penggunaan praktis di dunia nyata.</p>
+<p>Penerapan model akan diimplementasikan untuk melakukan prediksi kualitas red wine. Setelah ini tahap berpindah ke aplikasi streamlit.py</p>
+<p>–&gt;</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
